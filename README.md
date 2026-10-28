@@ -33,16 +33,25 @@ https://adivvyo.com
    existence of a config.txt will trump any values stored in Settings.
 5. Supports meta properties for og:xxx.
 6. Optional LinkedIn link/logo placed in footer.
+7. Full sub-page and sub-menu support as of 01/10/2026.
 
-# Update
+# Updates
+* 20260109C - 2026-01-10
+    - Fixed submenus on mobile and replaced hover to open with click to open
+* 20260109B - 2026-01-09
+    - Fixed issue #2
+* 20260109A - 2026-01-09
+    - Added support for subpages / submenus
+    - If root-level pages are hidden but they have visible subpages,
+      then that is just a "top-level menu placeholder" and not a navigable page.
 * 20200113A - 2020-01-13
- - Added wCMS Settings options for the theme.
+    - Added wCMS Settings options for the theme.
 * 20200111A - 2020-01-11
- - Created functions.php and moved some things into it.
+    - Created functions.php and moved some things into it.
 * 20200108A - 2020-01-08
- - Some aditional features and code cleanup.
+    - Some aditional features and code cleanup.
 * 1.0.1 - 2020-01-01
- - Lester Hightower fork.
+    - Lester Hightower fork.
 * 1.0.0 - 2017-04-18
- - Initial version.
+    - Initial version.
  
