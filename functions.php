@@ -214,6 +214,10 @@ function renderMenuAdivvyoRecursive($items, $parentSlug = '') {
   foreach ($items as $item) {
     $subpages = false;
     $visibleSubpage = false;
+    # WonderCMS 3.7.0 private page: visitors get the 404 page, so it and its subpages stay out of their menu
+    if (!empty($item->private) && !$Wcms->loggedIn) {
+      continue;
+    }
     if (property_exists($item, 'subpages') && !empty((array) $item->subpages)) {
       $subpages = $item->subpages;
       $visibleSubpage = in_array('show', array_column((array) $subpages, 'visibility'));
