@@ -220,7 +220,10 @@ function renderMenuAdivvyoRecursive($items, $parentSlug = '') {
     }
     if (property_exists($item, 'subpages') && !empty((array) $item->subpages)) {
       $subpages = $item->subpages;
-      $visibleSubpage = in_array('show', array_column((array) $subpages, 'visibility'));
+      # A private child does not count for a visitor, so a parent with only private children gets no empty dropdown
+      $visibleSubpage = !empty(array_filter((array) $subpages, function ($subpage) use ($Wcms) {
+        return ($subpage->visibility ?? '') === 'show' && ($Wcms->loggedIn || empty($subpage->private));
+      }));
     }
 
     # Hide if item is set to hide and has no visible subpages
