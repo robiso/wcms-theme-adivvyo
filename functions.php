@@ -143,7 +143,7 @@ function loadAdivvyoConf() {
     foreach ($adivvyoOpts as $id => $label) {
       # We prepend 
       $real_id = preg_replace('/^theme:/', '', $id);
-      $conf[$real_id] = $Wcms->get('blocks', $id)->content;
+      $conf[$real_id] = $Wcms->get('blocks', $id)->content ?? '';
     }
     return $conf;
   }
